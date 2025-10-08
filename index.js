@@ -1,10 +1,7 @@
-/**
- * index.js
- * Funcionalidade: Contagem Regressiva para Meia-Noite
- */
+
 
 document.addEventListener('DOMContentLoaded', () => {
-    // ID do elemento onde a contagem regressiva será exibida
+    
     const countdownElementId = 'ofertas-countdown'; 
     const countdownElement = document.getElementById(countdownElementId);
 
@@ -13,23 +10,19 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
-    /**
-     * Calcula o tempo restante até a meia-noite (00:00:00) do dia atual.
-     */
+    
     function calculateTimeUntilMidnight() {
         const now = new Date();
         const midnight = new Date(now);
 
-        // Define a hora para 00:00:00 do dia seguinte
+       
         midnight.setDate(now.getDate() + 1);
         midnight.setHours(0, 0, 0, 0);
 
         return midnight.getTime() - now.getTime();
     }
 
-    /**
-     * Formata os milissegundos restantes em HH:MM:SS.
-     */
+   
     function formatTime(ms) {
         if (ms < 0) return '00:00:00';
         
@@ -45,9 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return `${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
     }
 
-    /**
-     * Atualiza a exibição da contagem regressiva.
-     */
+   
     function updateCountdown() {
         let timeLeft = calculateTimeUntilMidnight();
         
@@ -61,6 +52,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     updateCountdown();
 
-    // Atualiza a contagem a cada segundo
+    
     const countdownInterval = setInterval(updateCountdown, 1000);
 });
