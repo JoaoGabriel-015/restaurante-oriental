@@ -1,24 +1,17 @@
-/**
- * detalhes.js
- * Funcionalidade: Exibição de Detalhes do Produto Específico e Validação de Formulário
- */
+
 
 document.addEventListener('DOMContentLoaded', () => {
-    // --- PARTE A: Exibir Detalhes do Produto ---
+    
     const API_URL = 'https://tech4japa.fly.dev/produtos';
     const detailsContainer = document.getElementById('detalhes-produto-container'); 
 
-    /**
-     * Obtém o ID do produto da query string da URL.
-     */
+    
     function getProductIdFromUrl() {
         const params = new URLSearchParams(window.location.search);
         return params.get('id');
     }
 
-    /**
-     * Busca o produto específico na API e exibe os detalhes.
-     */
+    
     async function fetchAndDisplayProductDetails() {
         const productId = getProductIdFromUrl();
 
@@ -36,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             
             const allProducts = await response.json();
-            // Tenta encontrar o produto. Converte o ID da URL para número, se necessário.
+            
             const product = allProducts.find(p => p.id == productId); 
             
             if (!product) {
@@ -56,9 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    /**
-     * Renderiza as informações do produto no container.
-     */
+    
     function renderProductDetails(product, container) {
         container.innerHTML = `
             <div>
@@ -80,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
     fetchAndDisplayProductDetails();
 
 
-    // --- PARTE B: Validação do Formulário "Receber promoções" ---
+    
 
     const form = document.getElementById('promocao-form');
     const emailInput = document.getElementById('email-promocao');
@@ -121,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let email = emailInput.value.trim();
         let isValid = true;
 
-        // 1. Validação do campo e-mail vazio (com prompt)
+        
         if (!email) {
             const promptedEmail = prompt('O campo de e-mail está vazio. Por favor, digite seu e-mail:');
             
@@ -131,7 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
         
-        // 2. Validação do e-mail: Vazio (pós-prompt) e Formato
+        
         if (!email) {
             displayError(emailErrorElement, 'Uma mensagem de erro deve ser exibida porque o e-mail não foi digitado.');
             emailInput.classList.add(errorClass);
@@ -148,7 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        // 3. Validação do Checkbox "Termos de Uso"
+        
         if (!termsCheckbox.checked) {
             termsCheckbox.classList.add(errorClass); 
             displayError(termsMessage, 'Você precisa aceitar os termos de uso.');
@@ -158,9 +149,9 @@ document.addEventListener('DOMContentLoaded', () => {
             displayError(termsMessage, '');
         }
 
-        // Se todas as validações passarem
+       
         if (isValid) {
-            // 4. Modifica o texto do botão de envio
+            
             submitButton.textContent = `E-mail "${email}" cadastrado com sucesso!`;
             submitButton.disabled = true;
         } else {
@@ -169,7 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Limpar o destaque de erro ao interagir
+    
     emailInput.addEventListener('input', () => {
         emailInput.classList.remove(errorClass);
         displayError(emailErrorElement, '');
