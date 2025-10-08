@@ -1,0 +1,324 @@
+/* ================================================= */
+/* 1. ESTILOS GERAIS E LAYOUT BASE                   */
+/* ================================================= */
+
+:root {
+    --cor-primaria: #A00000; /* Vermelho Escuro/Bordô */
+    --cor-secundaria: #F5E5C0; /* Bege Claro/Cor de Papel */
+    --cor-destaque: #D4AF37; /* Dourado/Ouro */
+    --cor-fundo: #1E1E1E; /* Preto Quase Escuro */
+    --cor-texto-claro: #F8F8F8;
+    --cor-texto-escuro: #333333;
+    --cor-erro: #ff4d4d;
+    --fonte-sans: 'Arial', sans-serif;
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fonte-sans);
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto-claro);
+    line-height: 1.6;
+}
+
+a {
+    color: var(--cor-destaque);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ================================================= */
+/* 2. HEADER E NAVEGAÇÃO                             */
+/* ================================================= */
+
+header {
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto-claro);
+    padding: 20px 5%;
+    text-align: center;
+    border-bottom: 5px solid var(--cor-destaque);
+}
+
+header h1 {
+    font-family: 'Georgia', serif;
+    margin-bottom: 10px;
+}
+
+nav a {
+    color: var(--cor-secundaria);
+    margin: 0 15px;
+    padding: 5px 10px;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--cor-destaque);
+    border-color: var(--cor-destaque);
+    text-decoration: none;
+}
+
+/* ================================================= */
+/* 3. CONTEÚDO PRINCIPAL E RODAPÉ                    */
+/* ================================================= */
+
+main {
+    padding: 30px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h2, h3 {
+    color: var(--cor-destaque);
+    margin-top: 20px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--cor-primaria);
+    padding-bottom: 5px;
+}
+
+footer {
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+    text-align: center;
+    padding: 15px;
+    margin-top: 50px;
+    border-top: 2px solid var(--cor-destaque);
+}
+
+/* ================================================= */
+/* 4. ESTILOS ESPECÍFICOS: INDEX.HTML                */
+/* ================================================= */
+
+.promocoes-destaque {
+    background-color: var(--cor-primaria);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    margin-bottom: 30px;
+}
+
+#ofertas-countdown {
+    /* Estilo para destacar o contador regressivo */
+    font-size: 2em;
+    color: var(--cor-destaque);
+    font-weight: bold;
+    display: block;
+    margin: 10px 0;
+    font-family: monospace;
+}
+
+/* ================================================= */
+/* 5. ESTILOS ESPECÍFICOS: CARDAPIO.HTML             */
+/* ================================================= */
+
+.lista-produtos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.produto-card {
+    background-color: var(--cor-texto-escuro); 
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    text-align: center;
+    cursor: pointer; 
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid var(--cor-primaria);
+}
+
+.produto-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.8);
+    border-color: var(--cor-destaque);
+}
+
+.produto-imagem {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    border: 3px solid var(--cor-secundaria);
+}
+
+.produto-nome {
+    color: var(--cor-destaque);
+    margin-bottom: 5px;
+}
+
+.produto-descricao {
+    font-size: 0.9em;
+    color: var(--cor-secundaria);
+}
+
+.detalhes-btn {
+    display: inline-block;
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto-claro);
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.detalhes-btn:hover {
+    background-color: var(--cor-destaque);
+    color: var(--cor-texto-escuro);
+}
+
+/* ================================================= */
+/* 6. ESTILOS ESPECÍFICOS: DETALHES.HTML (PRODUTO)   */
+/* ================================================= */
+
+#detalhes-produto-container {
+    background-color: var(--cor-texto-escuro);
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid var(--cor-primaria);
+    display: flex;
+    gap: 30px;
+}
+
+.detalhe-imagem {
+    max-width: 40%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 5px solid var(--cor-destaque);
+}
+
+.detalhe-nome {
+    font-size: 2.5em;
+    color: var(--cor-destaque);
+}
+
+.detalhe-descricao {
+    margin-top: 15px;
+    font-size: 1.1em;
+}
+
+/* ================================================= */
+/* 7. ESTILOS ESPECÍFICOS: FORMULÁRIO (detalhes.html)*/
+/* ================================================= */
+
+.formulario-promocao {
+    margin-top: 40px;
+    background-color: var(--cor-secundaria); 
+    color: var(--cor-texto-escuro);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.formulario-promocao h2 {
+    color: var(--cor-primaria);
+    border-bottom-color: var(--cor-texto-escuro);
+}
+
+#promocao-form label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+#email-promocao {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 2px solid var(--cor-texto-escuro);
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+/* Classe de erro do JS para input e checkbox */
+.input-error-border {
+    border-color: var(--cor-erro) !important;
+    box-shadow: 0 0 5px rgba(255, 77, 77, 0.7);
+}
+
+#aceite-termos.input-error-border {
+    /* Estilo para o checkbox, que é mais difícil de estilizar diretamente a borda */
+    outline: 2px solid var(--cor-erro);
+    box-shadow: 0 0 5px var(--cor-erro);
+}
+
+
+.campo-termos {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+#aceite-termos {
+    margin-right: 10px;
+}
+
+.mensagem-erro {
+    color: var(--cor-erro);
+    margin-top: 5px;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+#btn-promocao {
+    background-color: var(--cor-primaria);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    margin-top: 25px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+#btn-promocao:hover:not(:disabled) {
+    background-color: var(--cor-destaque);
+    color: var(--cor-texto-escuro);
+}
+
+#btn-promocao:disabled {
+    background-color: #666;
+    cursor: not-allowed;
+}
+
+/* ================================================= */
+/* 8. MEDIA QUERIES (Responsividade)                 */
+/* ================================================= */
+
+@media (max-width: 768px) {
+    header {
+        padding: 15px 5%;
+    }
+
+    nav a {
+        margin: 0 8px;
+        font-size: 0.9em;
+    }
+
+    #detalhes-produto-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .detalhe-imagem {
+        max-width: 100%;
+    }
+}

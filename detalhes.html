@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Produto e Promoções</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    <header>
+        <h1>Detalhes e Promoções</h1>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="cardapio.html">Cardápio</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="detalhes-produto">
+            <h2>Detalhes do Item</h2>
+            <div id="detalhes-produto-container">
+                <p>Carregando detalhes do produto...</p>
+            </div>
+        </section>
+
+        <hr>
+
+        <section class="formulario-promocao">
+            <h2>Receber Promoções Exclusivas</h2>
+            <form id="promocao-form">
+                
+                <label for="email-promocao">Seu Melhor E-mail:</label>
+                <input type="text" id="email-promocao" name="email" placeholder="exemplo@tech4me.com.br">
+                <div id="email-erro-mensagem" class="mensagem-erro" style="display: none;"></div>
+
+                <div class="campo-termos">
+                    <input type="checkbox" id="aceite-termos" name="aceite-termos">
+                    <label for="aceite-termos">Aceito os termos de uso e política de privacidade.</label>
+                </div>
+                
+                <div id="termos-erro-mensagem" class="mensagem-erro" style="display: none;"></div>
+
+                <button type="submit" id="btn-promocao">Enviar</button>
+
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Restaurante Oriental</p>
+    </footer>
+
+    <script src="detalhes.js"></script>
+</body>
+</html>
