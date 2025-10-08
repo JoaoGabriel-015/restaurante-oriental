@@ -1,19 +1,17 @@
-/* ================================================= */
-/* 1. ESTILOS GERAIS E LAYOUT BASE                   */
-/* ================================================= */
+
 
 :root {
-    --cor-primaria: #A00000; /* Vermelho Escuro/Bordô */
-    --cor-secundaria: #F5E5C0; /* Bege Claro/Cor de Papel */
-    --cor-destaque: #D4AF37; /* Dourado/Ouro */
-    --cor-fundo: #1E1E1E; /* Preto Quase Escuro */
+    --cor-primaria: #A00000; 
+    --cor-secundaria: #F5E5C0; 
+    --cor-destaque: #D4AF37; 
+    --cor-fundo: #1E1E1E; 
     --cor-texto-claro: #F8F8F8;
     --cor-texto-escuro: #333333;
     --cor-erro: #ff4d4d;
     --fonte-sans: 'Arial', sans-serif;
 }
 
-/* Reset básico */
+
 * {
     margin: 0;
     padding: 0;
@@ -36,9 +34,7 @@ a:hover {
     text-decoration: underline;
 }
 
-/* ================================================= */
-/* 2. HEADER E NAVEGAÇÃO                             */
-/* ================================================= */
+
 
 header {
     background-color: var(--cor-primaria);
@@ -67,9 +63,7 @@ nav a:hover {
     text-decoration: none;
 }
 
-/* ================================================= */
-/* 3. CONTEÚDO PRINCIPAL E RODAPÉ                    */
-/* ================================================= */
+
 
 main {
     padding: 30px 5%;
@@ -94,9 +88,7 @@ footer {
     border-top: 2px solid var(--cor-destaque);
 }
 
-/* ================================================= */
-/* 4. ESTILOS ESPECÍFICOS: INDEX.HTML                */
-/* ================================================= */
+
 
 .promocoes-destaque {
     background-color: var(--cor-primaria);
@@ -108,7 +100,7 @@ footer {
 }
 
 #ofertas-countdown {
-    /* Estilo para destacar o contador regressivo */
+    
     font-size: 2em;
     color: var(--cor-destaque);
     font-weight: bold;
@@ -117,9 +109,7 @@ footer {
     font-family: monospace;
 }
 
-/* ================================================= */
-/* 5. ESTILOS ESPECÍFICOS: CARDAPIO.HTML             */
-/* ================================================= */
+
 
 .lista-produtos {
     display: grid;
@@ -181,9 +171,7 @@ footer {
     color: var(--cor-texto-escuro);
 }
 
-/* ================================================= */
-/* 6. ESTILOS ESPECÍFICOS: DETALHES.HTML (PRODUTO)   */
-/* ================================================= */
+
 
 #detalhes-produto-container {
     background-color: var(--cor-texto-escuro);
@@ -212,9 +200,7 @@ footer {
     font-size: 1.1em;
 }
 
-/* ================================================= */
-/* 7. ESTILOS ESPECÍFICOS: FORMULÁRIO (detalhes.html)*/
-/* ================================================= */
+
 
 .formulario-promocao {
     margin-top: 40px;
@@ -245,14 +231,14 @@ footer {
     font-size: 1em;
 }
 
-/* Classe de erro do JS para input e checkbox */
+
 .input-error-border {
     border-color: var(--cor-erro) !important;
     box-shadow: 0 0 5px rgba(255, 77, 77, 0.7);
 }
 
 #aceite-termos.input-error-border {
-    /* Estilo para o checkbox, que é mais difícil de estilizar diretamente a borda */
+    
     outline: 2px solid var(--cor-erro);
     box-shadow: 0 0 5px var(--cor-erro);
 }
@@ -299,9 +285,7 @@ footer {
     cursor: not-allowed;
 }
 
-/* ================================================= */
-/* 8. MEDIA QUERIES (Responsividade)                 */
-/* ================================================= */
+
 
 @media (max-width: 768px) {
     header {
